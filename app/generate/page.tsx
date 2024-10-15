@@ -30,7 +30,12 @@ export default function Home() {
     placeholderData: (previousData) => previousData,
     queryKey: [debouncedPrompt],
     queryFn: async () => {
-      let res = await fetch("/api/generateImage", {
+      const baseUrl =
+      process.env.NODE_ENV === "production"
+        ? process.env.NEXT_PUBLIC_VERCEL_URL // For production, use Vercel's environment URL
+        : "http://localhost:3000"; // For local development
+
+       let res = await fetch(`${baseUrl}/api/generateImage`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
