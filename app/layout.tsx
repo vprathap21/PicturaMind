@@ -27,12 +27,14 @@ export default function RootLayout({
         <PlausibleProvider domain="blinkshot.io" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} dark h-full min-h-full bg-[length:6px] font-mono text-gray-100 antialiased`}
-        style={{ backgroundImage: `url(${bgPattern.src}` }}
+        className={`${geistSans.variable} ${geistMono.variable} dark h-full min-h-screen bg-[length:6px] font-mono text-gray-100 antialiased`}
+        style={{ backgroundImage: `url(${bgPattern.src})` }}
       >
         <Providers>
-          {children}
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

@@ -1,8 +1,9 @@
+import { Github,  } from "lucide-react"
 export const Footer = () => {
     return (
-        <footer className="container mx-auto p-4 text-center text-sm text-blue-400">
-        <p>
-          Made with ❤️ by{" "}
+        <footer className="container mx-auto p-4 text-center  text-blue-400">
+        <div className="flex items-center gap-2 justify-center">
+          Made with ❤️ by{"  "}
           <a
             href="https://github.com/vprathap21"
             target="_blank"
@@ -10,8 +11,18 @@ export const Footer = () => {
             className="text-blue-400 hover:underline"
           >
             Prathap
+            
           </a>
-        </p>
+          <a
+              href="https://github.com/vprathap21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 transition hover:text-white"
+            >
+              <Github className="h-6 w-6" />
+          </a>
+          
+          </div>
       </footer>
     );
 }
