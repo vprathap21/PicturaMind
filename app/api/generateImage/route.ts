@@ -18,8 +18,8 @@ if (process.env.UPSTASH_REDIS_REST_URL) {
 }
 
 export async function POST(req: Request) {
-  let json = await req.json();
-  let { prompt, userAPIKey, iterativeMode } = z
+  const json = await req.json();
+  const { prompt, userAPIKey, iterativeMode } = z
     .object({
       prompt: z.string(),
       iterativeMode: z.boolean(),
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     .parse(json);
 
   // Add observability if a Helicone key is specified, otherwise skip
-  let options: ConstructorParameters<typeof Together>[0] = {};
+  const options: ConstructorParameters<typeof Together>[0] = {};
   if (process.env.HELICONE_API_KEY) {
     options.baseURL = "https://together.helicone.ai/v1";
     options.defaultHeaders = {

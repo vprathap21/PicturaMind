@@ -24,7 +24,7 @@ export default function Home() {
   const [generations, setGenerations] = useState<
     { prompt: string; image: ImageResponse }[]
   >([]);
-  let [activeIndex, setActiveIndex] = useState<number>();
+  const [activeIndex, setActiveIndex] = useState<number>();
 
   const { data: image, isFetching } = useQuery({
     placeholderData: (previousData) => previousData,
@@ -48,7 +48,7 @@ export default function Home() {
     retry: false,
   });
 
-  let isDebouncing = prompt !== debouncedPrompt;
+  const isDebouncing = prompt !== debouncedPrompt;
 
   useEffect(() => {
     if (image && !generations.map((g) => g.image).includes(image)) {
@@ -57,7 +57,7 @@ export default function Home() {
     }
   }, [generations, image, prompt]);
 
-  let activeImage =
+  const activeImage =
     activeIndex !== undefined ? generations[activeIndex].image : undefined;
 
   return (
