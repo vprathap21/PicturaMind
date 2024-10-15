@@ -1,20 +1,24 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Sparkles, Zap, Image as ImageIcon, Palette } from "lucide-react"
+import { ArrowRight, Sparkles, Wand2, Zap, Image as ImageIcon, Palette } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import image1 from "@/public/image1.png"
+
 
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col text-white  from-gray-900 to-black">
-      <header className="container mx-auto flex items-center justify-between p-4 md:p-6">
-        <div className="flex items-center space-x-2">
-          <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-blue-500" />
-          <span className="text-lg md:text-xl font-bold">ImageGen AI</span>
-        </div>
+      <header className="container  mx-auto flex items-center justify-between p-4 md:p-6">
+      <div className="flex items-center space-x-3 group cursor-pointer">
+  <Wand2 className="h-8 w-8 text-blue-400 group-hover:text-purple-600 transition-colors duration-500" />
+  <span className="text-3xl font-extrabold tracking-wide bg-gradient-to-br from-blue-400 to-purple-700 bg-clip-text text-transparent group-hover:from-purple-400 group-hover:to-blue-700 transition-all duration-500 ease-in-out">
+    Image<span className="text-blue-600 group-hover:text-purple-600 transition-colors duration-500">Craft</span>
+    <span className="text-purple-600 group-hover:text-blue-600 transition-colors duration-500"> AI</span>
+  </span>
+</div>
+
         <nav>
           <Link href="/generate" passHref>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 text-sm md:text-base">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-colors duration-300">
               Start Creating
             </Button>
           </Link>

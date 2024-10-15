@@ -15,36 +15,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-let title = "ImageGen Ai – Real-Time AI Image Generator";
-let description = "Generate images with AI in a milliseconds";
-let url = "https://www.blinkshot.io/";
-let ogimage = "https://www.blinkshot.io/og-image.png";
-let sitename = "blinkshot.io";
-
-export const metadata: Metadata = {
-  metadataBase: new URL(url),
-  title,
-  description,
-  icons: {
-    icon: "/favicon.ico",
-  },
-  openGraph: {
-    images: [ogimage],
-    title,
-    description,
-    url: url,
-    siteName: sitename,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [ogimage],
-    title,
-    description,
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
