@@ -13,13 +13,13 @@ if (process.env.UPSTASH_REDIS_REST_URL) {
     // Allow 100 requests per day (~5-10 prompts)
     limiter: Ratelimit.fixedWindow(100, "1440 m"),
     analytics: true,
-    prefix: "blinkshot",
+    prefix: "picturnmind",
   });
 }
 
 export async function POST(req: Request) {
-  const json = await req.json();
-  const { prompt, userAPIKey, iterativeMode } = z
+  let json = await req.json();
+  let { prompt, userAPIKey, iterativeMode } = z
     .object({
       prompt: z.string(),
       iterativeMode: z.boolean(),
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     .parse(json);
 
   // Add observability if a Helicone key is specified, otherwise skip
-  const options: ConstructorParameters<typeof Together>[0] = {};
+  let options: ConstructorParameters<typeof Together>[0] = {};
   if (process.env.HELICONE_API_KEY) {
     options.baseURL = "https://together.helicone.ai/v1";
     options.defaultHeaders = {
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
 
   if (ratelimit && !userAPIKey) {
     const identifier = getIPAddress();
-
+    console.log(identifier);
     const { success } = await ratelimit.limit(identifier);
     if (!success) {
       return Response.json(

@@ -1,21 +1,51 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef } from "react"
 
-export default function Spinner({
+export default function FlowerSpinner({
   className,
+  size = 40,
+  color = "currentColor",
   ...rest
-}: ComponentPropsWithoutRef<"span">) {
+}: ComponentPropsWithoutRef<"span"> & { size?: number; color?: string }) {
+  const petalCount = 12
+  const angleStep = 360 / petalCount
+
   return (
-    <span className={`relative block opacity-[.65] ${className}`} {...rest}>
-      {Array.from(Array(8).keys()).map((i) => (
+    <span
+      className={`inline-block ${className}`}
+      style={{ width: size, height: size }}
+      role="progressbar"
+      aria-valuetext="Loading"
+      {...rest}
+    >
+      {Array.from({ length: petalCount }).map((_, i) => (
         <span
           key={i}
-          className="absolute left-[calc(50%-12.5%/2)] top-0 h-[100%] w-[12.5%] animate-[spinner_800ms_linear_infinite] before:block before:h-[30%] before:w-[100%] before:rounded-full before:bg-current"
+          className="absolute left-1/3 top-1/3 -translate-x-1/3 -translate-y-1/3 h-[20%] w-[8%] origin-[50%_150%]"
           style={{
-            transform: `rotate(${45 * i}deg)`,
-            animationDelay: `calc(-${8 - i} / 8 * 800ms)`,
+            transform: `rotate(${angleStep * i}deg)`,
+            animation: `flowerSpin 1.2s ease-in-out infinite`,
+            animationDelay: `${-i * (1.2 / petalCount)}s`,
           }}
-        />
+        >
+          <span
+            className="absolute inset-0 rounded-full"
+            style={{
+              backgroundColor: color,
+              opacity: 0.7,
+            }}
+          />
+        </span>
       ))}
+      <style jsx>{`
+        @keyframes flowerSpin {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.3;
+          }
+        }
+      `}</style>
     </span>
-  );
+  )
 }

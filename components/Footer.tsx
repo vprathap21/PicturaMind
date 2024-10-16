@@ -14,13 +14,14 @@ export const Footer = () => {
             
           </a>
           <a
-              href="https://github.com/vprathap21"
+              href="https://github.com/vprathap21/PicturaMind"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 transition hover:text-white"
             >
               <Github className="h-6 w-6" />
           </a>
+          <meta property="twitter:image" content="Twitter link preview image URL"></meta>
           
           </div>
       </footer>
