@@ -1,20 +1,20 @@
 # PicturaMind - AI Image Generation App
 
-PicturaMind is an AI-powered image generation app that leverages the Together AI API to generate images based on user prompts. It includes rate-limiting functionality using Upstash Redis and observability with Helicone, ensuring a secure and efficient service for users.
+PicturaMind is an innovative AI-powered image generation app that utilizes the Together AI API to create stunning visuals from user prompts. With integrated rate-limiting through Upstash Redis and observability via Helicone, PicturaMind delivers a secure and efficient experience.
 
 ## Features
 
-- **AI Image Generation**: Generate images based on user-provided prompts using the Together AI API.
-- **Rate Limiting**: Integrated with Upstash Redis to limit the number of requests per day.
-- **Helicone Observability**: Monitors API requests and responses with the Helicone dashboard.
-- **Edge Runtime**: Runs in a Next.js edge environment for faster response times.
+- **AI Image Generation**: Create captivating images based on user-provided prompts.
+- **Rate Limiting**: Protects the service with request limits using Upstash Redis.
+- **Helicone Observability**: Tracks API requests and responses via the Helicone dashboard for enhanced insights.
+- **Edge Runtime**: Optimized for speed, running in a Next.js edge environment.
 
 ## Demo
 
-You can check the live version at: [PicturaMind](#)
-![Screenshot from 2024-10-15 22-52-48](https://github.com/user-attachments/assets/72e7afe0-8365-4401-b442-1ddc1827d41e)
-![Screenshot from 2024-10-16 18-10-36](https://github.com/user-attachments/assets/b81825e2-1e13-42ce-bc79-3b92c9fc31b1)
-![Screenshot from 2024-10-16 18-32-10](https://github.com/user-attachments/assets/712911d0-0023-4d8a-ac1f-c4b0a33c4ed3)
+![Demo Screenshot 1](https://github.com/user-attachments/assets/72e7afe0-8365-4401-b442-1ddc1827d41e)
+![Demo Screenshot 2](https://github.com/user-attachments/assets/7b07c575-bc52-46ea-ba74-77b4b5d2de2b)
+![Demo Screenshot 3](https://github.com/user-attachments/assets/7ae4b9cb-989d-4383-bb1c-7a849965e67c)
+![Demo Screenshot 4](https://github.com/user-attachments/assets/9740a73b-eb7a-4d01-a85b-00ab88afc640)
 
 ## Tech Stack
 
@@ -23,6 +23,4 @@ You can check the live version at: [PicturaMind](#)
 - **AI Model**: Together AI
 - **Rate Limiting**: Upstash Redis
 - **Monitoring**: Helicone
-  ```bash
-   git clone https://github.com/your-username/picturamind.git
-   cd picturamind
+
