@@ -11,7 +11,7 @@ if (process.env.UPSTASH_REDIS_REST_URL) {
   ratelimit = new Ratelimit({
     redis: Redis.fromEnv(),
     // Allow 100 requests per day (~5-10 prompts)
-    limiter: Ratelimit.fixedWindow(100, "1440 m"),
+    limiter: Ratelimit.fixedWindow(20, "1440 m"),
     analytics: true,
     prefix: "picturnmind",
   });
