@@ -1,2 +1,2 @@
 
-# ImageGen-AI
+# PicturaMind
